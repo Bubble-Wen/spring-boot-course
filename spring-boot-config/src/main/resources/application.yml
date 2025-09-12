@@ -1,0 +1,21 @@
+server:
+  port: 8888
+
+team:
+  name: "Web2班"
+  leader: "mqxu"
+  phone: "15852796867"
+  age: 6
+
+aliyun-oss:
+  endpoint: "oss-cn-hangzhou.aliyuncs.com"
+  bucket: "infinityx7-oss0"
+  accessKey: "LTAI5tFqmkULcnBCrU22kkyj"
+  secretKey: "sEkf0RCJiFxCiINX1S2T2ohlNL2Cic"
+  dir: "img/"
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
