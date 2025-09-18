@@ -1,0 +1,25 @@
+spring:
+  datasource:
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  # ⽣产数据库连接信息
+  url: jdbc:mysql://db.example.com:3306/my_mp_prod?useUnicode=true&characterEncoding=utf8&useSSL=true&serverTimezone=Asia/Shanghai
+  username: ${DB_USER:myappuser}
+  password: ${DB_PASS:myapppwd}
+  hikari:
+    maximum-pool-size: 30 # 最⼤连接数（视业务和DB性能调整）
+    minimum-idle: 10 # 最⼩空闲连接
+    idle-timeout: 30000 # 30秒空闲回收
+    max-lifetime: 1800000 # 30分钟强制回收，避免MySQL 8⼩时超时
+    connection-timeout: 10000 # 10秒未获取到连接直接抛异常
+    pool-name: HikariCP
+server:
+  port: 8888
+  servlet:
+  context-path: /api # 统⼀API前缀，便于⽹关管理
+# ⽇志分级（⽣产常⽤配置）
+logging:
+  level:
+    root: INFO
+    top.mqxu: DEBUG # 业务包调试级别（可调成INFO）
+file: # ⽇志⽂件路径
+  name: /var/log/myapp/myapp.log
