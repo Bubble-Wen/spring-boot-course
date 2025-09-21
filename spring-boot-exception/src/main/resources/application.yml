@@ -1,0 +1,29 @@
+# 服务端口（默认8080，可自定义）
+server:
+  port: 8888
+
+# 数据库配置
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/book_db?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root  # 你的MySQL用户名
+    password: 123456  # 你的MySQL密码
+    # 连接池配置（HikariCP，默认内置）
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+
+# MyBatis-Plus 配置
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml  # Mapper XML 扫描路径（若有自定义SQL）
+  type-aliases-package: top.jwxiang.entity    # 实体类别名扫描
+  configuration:
+    map-underscore-to-camel-case: true       # 下划线转驼峰（如 book_title → bookTitle）
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # 打印SQL日志（调试用）
+  global-config:
+    db-config:
+      id-type: auto  # 主键自增
+      logic-delete-field: deleted  # 逻辑删除字段名
+      logic-delete-value: 1        # 已删除值
+      logic-not-delete-value: 0    # 未删除值
