@@ -1,4 +1,4 @@
-package top.jwxiang.enums;
+package top.jwxiang.redis.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

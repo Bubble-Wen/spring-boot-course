@@ -1,9 +1,5 @@
-package top.jwxiang.cache;
+package top.jwxiang.redis.cache;
 
-/**
- * @Author: mqxu
- * @Date: 2025/9/24
- */
 public class RedisKeys {
 
     /**

@@ -1,5 +1,10 @@
-package top.jwxiang.service;
+package top.jwxiang.redis.service;
 
 public interface SmsService {
-    void sendSms(String phone);
+    /**
+     * 发送短信
+     *
+     * @param phone ⼿机号
+     */
+    boolean sendSms(String phone);
 }

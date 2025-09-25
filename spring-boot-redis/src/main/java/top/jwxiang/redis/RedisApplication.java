@@ -1,4 +1,4 @@
-package top.jwxiang;
+package top.jwxiang.redis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -13,3 +13,13 @@ spring:
           min-idle: 10
           max-idle: 10
           max-active: 50
+
+jwxiang:
+  sms:
+    ccp:
+      serverIp: app.cloopen.com
+      port: 8883
+      accountSId: 2c94811c9860a9c4019917b31e8d1cf1
+      accountToken: 68536805d2d948a188eeca16a7ac95f5
+      appId: 2c94811c9860a9c4019917b320051cf8
+      templateId: 1

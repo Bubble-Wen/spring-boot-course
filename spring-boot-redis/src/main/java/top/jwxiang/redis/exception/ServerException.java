@@ -1,8 +1,8 @@
-package top.jwxiang.exception;
+package top.jwxiang.redis.exception;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import top.jwxiang.enums.ErrorCode;
+import top.jwxiang.redis.enums.ErrorCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class ServerException extends RuntimeException {

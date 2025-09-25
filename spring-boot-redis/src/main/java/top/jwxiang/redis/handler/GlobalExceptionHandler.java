@@ -1,4 +1,4 @@
-package top.jwxiang.handler;
+package top.jwxiang.redis.handler;
 
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
-import top.jwxiang.boot.redis.exception.ServerException;
-import top.jwxiang.boot.redis.result.Result;
+import top.jwxiang.redis.exception.ServerException;
+import top.jwxiang.redis.result.Result;
 
 import java.util.stream.Collectors;
 

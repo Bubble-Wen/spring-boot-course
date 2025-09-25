@@ -1,4 +1,4 @@
-package top.jwxiang.entity;
+package top.jwxiang.redis.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

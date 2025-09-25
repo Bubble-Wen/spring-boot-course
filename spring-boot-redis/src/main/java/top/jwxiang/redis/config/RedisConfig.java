@@ -1,4 +1,4 @@
-package top.jwxiang.config;
+package top.jwxiang.redis.config;
 
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONWriter;
@@ -45,7 +45,6 @@ public class RedisConfig {
             }
             return JSON.toJSONString(t, JSONWriter.Feature.WriteClassName).getBytes(DEFAULT_CHARSET);
         }
-
         @Override
         public T deserialize(byte[] bytes) throws SerializationException {
             if (null == bytes || bytes.length == 0) {
