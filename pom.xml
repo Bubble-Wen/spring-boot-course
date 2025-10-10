@@ -21,7 +21,8 @@
         <module>spring-boot-mp</module>
         <module>spring-boot-exception</module>
         <module>spring-boot-alipay</module>
-        <module>spring-boot-redis</module><!-- 子模块目录名 -->
+        <module>spring-boot-redis</module>
+        <module>spring-boot-schedule</module><!-- 子模块目录名 -->
     </modules>
 
 
@@ -35,6 +36,7 @@
         <datafaker.version>2.0.2</datafaker.version>
         <fastjson2.version>2.0.43</fastjson2.version>
         <jakarta.annotation.api.version>2.1.1</jakarta.annotation.api.version>
+        <jjwt.version>0.11.5</jjwt.version>
     </properties>
 
     <!--统一管理版本-->
@@ -64,6 +66,21 @@
                 <groupId>com.alibaba.fastjson2</groupId>
                 <artifactId>fastjson2</artifactId>
                 <version>${fastjson2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>${jjwt.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
