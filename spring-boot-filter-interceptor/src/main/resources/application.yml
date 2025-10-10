@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+spring:
+  # Redis 配置
+  data:
+    redis:
+      # Redis 服务器地址
+      host: localhost
+      # Redis 服务器端口
+      port: 6379
+      # 连接密码（如果设置了密码）
+      password:
+      # 连接超时时间（毫秒）
+      timeout: 5000ms
+      # 数据库索引（0-15，默认为0）
+      database: 0
+      # 连接池配置（使用 Lettuce）
+      lettuce:
+        pool:
+          # 连接池最大连接数
+          max-active: 200
+          # 连接池最大阻塞等待时间（负数表示没有限制）
+          max-wait: -1ms
+          # 连接池中的最大空闲连接
+          max-idle: 20
+          # 连接池中的最小空闲连接
+          min-idle: 10
+          # 空闲连接检测周期
+          time-between-eviction-runs: 60s
+jwt:
+  secret: xQ7Z2p9KfD3sT6gH1jM4nB8vC5rY0uL7wE2t#私钥，32位随机字符
+  expires-in: 3600 #令牌过期时间
+
+
+
