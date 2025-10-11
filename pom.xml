@@ -22,7 +22,8 @@
         <module>spring-boot-exception</module>
         <module>spring-boot-alipay</module>
         <module>spring-boot-redis</module>
-        <module>spring-boot-schedule</module><!-- 子模块目录名 -->
+        <module>spring-boot-schedule</module>
+        <module>spring-boot-websocket</module><!-- 子模块目录名 -->
     </modules>
 
 
@@ -42,6 +43,12 @@
     <!--统一管理版本-->
     <dependencyManagement>
         <dependencies>
+            <!-- OkHttp -->
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>4.12.0</version>
+            </dependency>
             <dependency>
                 <groupId>com.cloopen</groupId>
                 <artifactId>java-sms-sdk</artifactId>
