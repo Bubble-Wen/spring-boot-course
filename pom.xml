@@ -38,6 +38,7 @@
         <fastjson2.version>2.0.43</fastjson2.version>
         <jakarta.annotation.api.version>2.1.1</jakarta.annotation.api.version>
         <jjwt.version>0.11.5</jjwt.version>
+        <okhttp.version>4.9.1</okhttp.version>
     </properties>
 
     <!--统一管理版本-->
@@ -47,48 +48,65 @@
             <dependency>
                 <groupId>com.squareup.okhttp3</groupId>
                 <artifactId>okhttp</artifactId>
-                <version>4.12.0</version>
+                <version>${okhttp.version}</version>
             </dependency>
+
+            <!-- 短信服务 -->
             <dependency>
                 <groupId>com.cloopen</groupId>
                 <artifactId>java-sms-sdk</artifactId>
                 <version>${sms.version}</version>
             </dependency>
+
+            <!-- MyBatis Plus -->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
+
+            <!-- MySQL -->
             <dependency>
                 <groupId>com.mysql</groupId>
                 <artifactId>mysql-connector-j</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
+
+            <!-- 数据生成器 -->
             <dependency>
                 <groupId>net.datafaker</groupId>
                 <artifactId>datafaker</artifactId>
                 <version>${datafaker.version}</version>
             </dependency>
+
+            <!-- fastjson2 -->
             <dependency>
                 <groupId>com.alibaba.fastjson2</groupId>
                 <artifactId>fastjson2</artifactId>
                 <version>${fastjson2.version}</version>
             </dependency>
+
+            <!-- JWT -->
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt-api</artifactId>
                 <version>${jjwt.version}</version>
             </dependency>
+
+            <!-- JWT 实现依赖 -->
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt-impl</artifactId>
                 <version>${jjwt.version}</version>
             </dependency>
+
+            <!-- JWT 签名实现依赖 -->
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt-jackson</artifactId>
                 <version>${jjwt.version}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -109,6 +127,10 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
     </dependencies>
 

@@ -1,0 +1,7 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.web.socket: DEBUG  # 开启 WebSocket 相关的 DEBUG 日志
+    org.springframework.web.socket.server: DEBUG
