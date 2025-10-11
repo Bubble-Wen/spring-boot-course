@@ -1,0 +1,33 @@
+server:
+  port: 8888
+
+spring:
+  profiles:
+    active: test
+
+# MyBatis-Plus 配置
+mybatis-plus:
+  configuration:
+    # 开启驼峰命名转换
+    map-underscore-to-camel-case: true
+    # ⽇志输出
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      # 主键类型，⾃增
+      id-type: auto
+      # 逻辑删除字段，1为删除，0为未删除
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      # 字段填充策略，默认为⾮空时填充
+      insert-strategy: not_null
+      update-strategy: not_null
+      # 实体类别名包
+      type-aliases-package: top.jwxiang.mp.entity
+# ⽇志配置
+logging:
+  level:
+    # ⽇志级别，debug 为打印 SQL 语句
+    top.jwxiang.mp: debug
+    com.baomidou.mybatisplus: debug

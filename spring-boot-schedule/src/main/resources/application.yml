@@ -1,0 +1,77 @@
+# 1. 邮件发送配置（以QQ邮箱为例，需开启SMTP服务并获取授权码）
+spring:
+  # 1. 数据库配置（Quartz 需存储任务信息到数据库）
+  datasource:
+    url: jdbc:mysql://localhost:3306/my_mp?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # 2. Quartz 配置
+  quartz:
+    # 持久化方式：jdbc（存储到数据库），默认为 memory（内存，服务重启丢失）
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: always # always=每次启动创建，embedded=仅内存模式创建，never=不创建
+    # 线程池配置
+    properties:
+      org:
+        quartz:
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 10 # 核心线程数
+            threadNamePrefix: quartz-thread  # 线程名称前缀
+            threadPriority: 5 # 线程优先级（1-10，默认5）# 日志配置
+
+  # MP 日志
+  logging:
+    level:
+      com.baomidou.mybatisplus.samples: debug
+
+  # 配置 MP
+  mybatis-plus:
+    configuration:
+      map-underscore-to-camel-case: true   # 开启驼峰式
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # 调试时打印 SQL 语句
+    global-config:
+      db-config:
+        logic-delete-field: deleted  # 全局配置逻辑删除的字段名
+        logic-delete-value: 1  # 逻辑已删除的值（默认为1）
+        logic-not-delete-value: 0 # 逻辑未删除的值（默认为0）
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: 2933128731@qq.com  # 发送方邮箱
+    password: cjukvkqonuloddbh  # QQ邮箱SMTP授权码（不是登录密码）
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+# 2. 天气API配置（使用「和风天气」免费API，需自行注册获取key）
+weather:
+  api:
+    key: 8982c015fb964563983bd0bbc410c951  # 和风天气API密钥，前面已申请并复制
+    city: 101190101                      # 南京的城市ID（可查和风天气城市列表）
+    url: https://devapi.qweather.com/v7/weather/3d
+# 3. 接收邮件列表
+email:
+  recipients: 2933128731@qq.com # 多个收件人用逗号分隔
+
+# 数据库备份配置
+db:
+  backup:
+    host: localhost          # 数据库地址
+    port: 3306               # 数据库端口
+    username: root           # 数据库用户名
+    password: 123456         # 数据库密码
+    db-name: my_mp     # 需要备份的数据库名
+    local-path: ./my_mp/ # 本地备份文件存储路径
+
+# 健康检查阈值配置
+server:
+  monitor:
+    cpu-threshold: 80.0  # CPU使用率阈值（%）
+    memory-threshold: 50.0  # 内存使用率阈值（%），根据自己情况调整，以触发阈值
